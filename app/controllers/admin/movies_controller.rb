@@ -11,7 +11,7 @@ class Admin::MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      
+      redirect_to @movie
     else
       flash[:danger] = "登録に失敗しました"
       render 'new'
