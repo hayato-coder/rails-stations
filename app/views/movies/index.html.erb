@@ -1,0 +1,8 @@
+<h1>All movies</h1>
+
+<ul class="users">
+  <% @movies.each do |movie| %>
+    <%= movie.name %>
+    <%= image_tag movie.image %>
+  <% end %>
+</ul>
