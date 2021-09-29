@@ -28,9 +28,9 @@ class Admin::MoviesController < ApplicationController
 
   def update
     if @movie.update_attributes(movie_params)
-      flash[:success] = "Profile updated"
       redirect_to @movie
     else
+      flash[:danger] = "登録に失敗しました"
       render 'edit'
     end
   end
