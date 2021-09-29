@@ -24,6 +24,9 @@ class Admin::MoviesController < ApplicationController
 
   def edit
     @movie = Movie.find(params[:id])
+  end
+
+  def update
     if @movie.update_attributes(movie_params)
       flash[:success] = "Profile updated"
       redirect_to @movie
