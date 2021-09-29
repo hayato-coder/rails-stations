@@ -6,4 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-movies = Movie.create([{ name: 'Star Wars', image: 'dog.png' }, { name: 'Lord of the Rings', image: 'scape.png' }])
+movies = Movie.create([{ name: 'Star Wars', 
+    year: 1, description: 'こんにちは', 
+    image_url: 'https://picsum.photos/id/237/200/300',
+    is_showing: 1}, 
+])
