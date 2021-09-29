@@ -4,6 +4,10 @@ class Admin::MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def show
+    @movie = Movie.find(params[:id])
+  end
+
   def new
     @movie = Movie.new
   end
@@ -15,6 +19,16 @@ class Admin::MoviesController < ApplicationController
     else
       flash[:danger] = "登録に失敗しました"
       render 'new'
+    end
+  end
+
+  def edit
+    @movie = Movie.find(params[:id])
+    if @movie.update_attributes(movie_params)
+      flash[:success] = "Profile updated"
+      redirect_to @movie
+    else
+      render 'edit'
     end
   end
 
