@@ -28,7 +28,7 @@ class Admin::MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    if @movie.updates(movie_params)
+    if @movie.update(movie_params)
       redirect_to action: "show"
     else
       flash[:danger] = "登録に失敗しました"
