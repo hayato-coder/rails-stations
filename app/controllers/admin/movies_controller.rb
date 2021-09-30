@@ -36,6 +36,11 @@ class Admin::MoviesController < ApplicationController
     end
   end
 
+  def destroy
+    Movie.find(params[:id]).destroy
+    redirect_to action: "index"
+  end
+
   private
     def movie_params
       params.permit(:name, :year, :description,
