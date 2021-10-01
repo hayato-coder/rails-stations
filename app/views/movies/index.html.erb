@@ -1,8 +1,25 @@
 <h1>All movies</h1>
 
-<ul class="movies">
-  <% @movies.each do |movie| %>
-    <%= movie.name %>
-    <%= image_tag movie.image_url %>
-  <% end %>
-</ul>
+<% @movies.each do |movie| %>
+  <%= movie.name %>
+  <%= movie.year %>
+  <%= movie.is_showing ? '上映中' : '上映予定' %>
+  <%= movie.description %>
+  <%= image_tag movie.image_url %>
+  <%= movie.created_at %>
+  <%= movie.updated_at %>
+<% end %>
+
+<%= form_with surl: movies_path, method: :get, local: true do |f| %>
+  <%= f.label :検索条件 %>
+  <%= f.text_field :search %>
+
+  <%= f.radio_button :status, :all, checked: true %>
+  <%= f.label :status, "すべて" %>
+  <%= f.radio_button :status, 1 %>
+  <%= f.label :status, "公開中" %>
+  <%= f.radio_button :status, 0 %>
+  <%= f.label :status, "公開予定" %>
+
+  <%= f.submit "検索", class: "btn btn-primary" %>
+<% end %>
