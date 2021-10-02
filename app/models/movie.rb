@@ -10,13 +10,13 @@ class Movie < ApplicationRecord
         if status == "all"
           Movie.where(['name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%"])        
         else 
-          Movie.where(['name LIKE ? OR description LIKE ? OR is_showing = #{status}', "%#{search}%", "%#{search}%"])
+          Movie.where(['name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%"]).where(is_showing: status)
         end
       else
         if status == "all"
           Movie.all
         else
-          Movie.where(['is_showing = #{status}'])
+          Movie.where(is_showing: status)
         end
       end
     end

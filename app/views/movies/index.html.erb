@@ -10,7 +10,7 @@
   <%= movie.updated_at %>
 <% end %>
 
-<%= form_with surl: movies_path, method: :get, local: true do |f| %>
+<%= form_with url: movies_path, method: :get, local: true do |f| %>
   <%= f.label :検索条件 %>
   <%= f.text_field :search %>
 
