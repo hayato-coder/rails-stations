@@ -1,14 +1,18 @@
 <h1>All movies</h1>
 
+
 <% @movies.each do |movie| %>
-  <%= movie.name %>
-  <%= movie.year %>
-  <%= movie.is_showing ? '上映中' : '上映予定' %>
-  <%= movie.description %>
-  <%= image_tag movie.image_url %>
-  <%= movie.created_at %>
-  <%= movie.updated_at %>
+  <div>
+    <%= movie.name %>
+    <%= movie.year %>
+    <%= movie.is_showing ? '上映中' : '上映予定' %>
+    <%= movie.description %>
+    <%= image_tag movie.image_url %>
+    <%= movie.created_at %>
+    <%= movie.updated_at %>
+  </div>
 <% end %>
+
 
 <%= form_with url: movies_path, method: :get, local: true do |f| %>
   <%= f.label :検索条件 %>

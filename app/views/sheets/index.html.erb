@@ -1,0 +1,11 @@
+<h1>All sheets</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <% @sheets.each do |sheet| %>
+        <td><%= sheet.row %>-<%= sheet.column %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</ul>
