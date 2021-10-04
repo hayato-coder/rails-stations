@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  has_many :schedules
   validates :name, presence: true, length: {maximum: 160}, uniqueness: true
   validates :year, length: {maximum: 45}
   validates :image_url, length: {maximum: 150}

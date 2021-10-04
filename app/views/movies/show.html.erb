@@ -1,0 +1,22 @@
+ID
+<%= @movie.id %>
+映画タイトル
+<%= @movie.name %>
+公開年
+<%= @movie.year %>
+上映中か
+<%= @movie.is_showing ? '上映中' : '上映予定' %>
+概要
+<%= @movie.description %>
+画像
+<%= image_tag @movie.image_url %>
+
+<div>
+  スケジュール
+  <% @movie.schedules.each do |schedule| %>
+    <div>
+      <%= schedule.start_time %>
+      <%= schedule.end_time %>
+    </div>
+  <% end %>
+</div>
