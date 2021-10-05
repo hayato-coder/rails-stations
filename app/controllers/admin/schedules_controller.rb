@@ -7,6 +7,10 @@ class Admin::SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
+  def edit
+    
+  end
+
   def update
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
