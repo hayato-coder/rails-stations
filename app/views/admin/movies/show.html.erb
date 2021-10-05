@@ -8,3 +8,13 @@
 <%= @movie.description %>
 画像URL
 <%= @movie.image_url %>
+
+<%= link_to '削除', admin_movie_path(@movie.id), method: :delete, data: {confirm: "You sure?" } %>
+
+<div>
+  <% @movie.schedules.each do |schedule| %>
+    <%= link_to 'スケジュールへ', admin_schedule_path(schedule.movie.id) %>
+    開始時刻<%= schedule.start_time %>
+    終了時刻<%= schedule.end_time %>
+  <% end %>
+</div>

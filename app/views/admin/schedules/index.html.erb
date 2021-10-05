@@ -1,0 +1,5 @@
+<% @schedules.each do |schedule| %>
+  <h2><%= schedule.movie.id %><%= link_to schedule.movie.name, admin_schedule_path(schedule.movie.id) %></h2>
+  開始時刻<%= schedule.start_time %>
+  終了時刻<%= schedule.end_time %>
+<% end %>
