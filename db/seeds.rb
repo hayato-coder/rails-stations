@@ -26,4 +26,6 @@ Movie.create!(name: 'Lord of the Rings',
 end
 
 movie.schedules.create!(start_time: Time.now, end_time: Time.now)
+movie.schedules.create!(start_time: Time.now, end_time: Time.now)
+movie.schedules.create!(start_time: Time.now, end_time: Time.now)
 
