@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resources :movies
     resources :schedules
   end
+  resource :schedules
   resources :sheets
 end
