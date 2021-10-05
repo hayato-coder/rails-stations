@@ -1,0 +1,14 @@
+開始時刻
+<%= @schedule.start_time %>
+終了時刻
+<%= @schedule.end_time %>
+
+<%= form_with model: @schedule, url: schedule_path(@schedule.id) do |f| %>
+  <%= f.label :開始時間 %>
+  <%= f.datetime_field :start_time %>
+
+  <%= f.label :終了時間 %>
+  <%= f.datetime_field :end_time %>
+
+  <%= f.submit "送信", class: "btn btn-primary" %>
+<% end %>
