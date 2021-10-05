@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   resources :movies
   namespace :admin do
     resources :movies
-    resources :schedules
   end
-  resource :schedules
+  resources :schedules, path: '/admin/schedules'
   resources :sheets
 end
