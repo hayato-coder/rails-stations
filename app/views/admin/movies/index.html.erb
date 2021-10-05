@@ -14,8 +14,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <% @movies.each do |movie| %>
+    <% @movies.each do |movie| %>
+      <tr>
         <td><%= link_to movie.id, edit_admin_movie_path(movie.id) %></td>
         <td><%= movie.name %></td>
         <td><%= movie.year %></td>
@@ -24,7 +24,13 @@
         <td><%= image_tag movie.image_url %></td>
         <td><%= movie.created_at %></td>
         <td><%= movie.updated_at %></td>
-      <% end %>
-    </tr>
+        <% movie.schedules.each do |schedule| %>
+          <tr>
+            <td><%= schedule.start_time %></td>
+            <td><%= schedule.end_time %></td>
+          </tr>
+        <% end %>
+      </tr>
+    <% end %>
   </tbody>
 </table>
